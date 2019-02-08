@@ -1,1 +1,52 @@
 
+OXO
+
+call board
+- if 1 exit program.
+
+
+
+Board
+
+if no board - init board
+
+
+
+input mechanism
+- only allow correct coordinates
+- only allow correct characters
+- check these against the baord to make sure that they are valid moves
+
+save new record in array
+- 2d array;
+
+check for three in a row
+- call display
+- if win, print win statement
+- return 1;
+
+check for full board
+- call display
+- print draw statement
+- return 1;
+
+if not yet three in a row
+-  call display
+- call board again
+- - if 1, return 1.
+
+
+display
+
+this takes another class and then prints it out. 
+
+
+
+
+
+
+
+
+
+
+Types {blank/X/0}
