@@ -12,9 +12,10 @@ import java.util.Scanner;
 
 
 public class Player {
-   int play_count = -1; // will this reset everytime? does it need to be a const
+   int play_count = -1;
    Scanner input = new Scanner(System.in);
-   int[] return_value = {0,0,0}; // i then populate this with the character i need;
+   int[] ret_val = {0,0,0}; // i then populate this with the character i need;
+   private int[][] test_board = new int[3][3];
 
 
    public Player() {
@@ -25,13 +26,13 @@ public class Player {
    }
 
    public int[] take_turn() {
+      if (play_count==-1) {  //skip the first call of Player
+         play_count++;
+         return ret_val;
+      }
       if(play_count==0) {
          System.out.println("choose player");
          play_count = choose_player();  //set play count to odd (player 1) or even (player 2).
-      }
-      if (play_count==-1) {
-         play_count++; //this should increment the turns
-         return return_value;
       }
       return input_coordinates();
    }
@@ -59,16 +60,51 @@ public class Player {
       else {
          current_player = 2;
       }
-      return_value[2] = current_player;
-      System.out.format("Player %d 's go\n", current_player);
-      System.out.println("Please input the row number (0-2) and press enter. Then input the column number and enter (0-2):");
-      for(int i = 0; i < 2; i++) {
-         return_value[i] = input.nextInt();
-      }
+      ret_val[2] = current_player;
+      do {
+         System.out.format("Player %d 's go\n", current_player);
+         System.out.println("Please input the row number (0-2) and press enter. Then input the column number and enter (0-2):");
+         for(int i = 0; i < 2; i++) {
+            ret_val[i] = input.nextInt();
+            if(!(ret_val[i]==0||ret_val[i]==1||ret_val[i]==2)) {
+               System.out.println("Inputted value incorrect. Please input a 0, a 1 or a 2");
+               i--;
+            }
+         }
+         if(check_character(ret_val)!=0) {
+            System.out.println("That cell is already full. Please input again.");
+         }
+      } while (check_character(ret_val)!=0);
+
+
+/*      if(check_character(ret_val)!=0) {
+         temp = check_character(ret_val)
+         play_count-=1; // change to --
+      } */
       play_count++;
-      return return_value;
+      fill_test(ret_val);
+      return ret_val;
 
    }
+
+   private int check_character(int[] xy) { // these take a int array with 2 coordinates as argument.
+      return test_board[xy[0]][xy[1]];
+   }
+
+   private void fill_test(int[] xy) { // could i get rid of this input because it's already in the array?
+      test_board[xy[0]][xy[1]]= xy[2]; // if player 1, place is 1. if player 2. it is 2.
+   }
+
+   private void print_board() { // get rid of this when i'm done with it
+      for(int x=0; x < 3;x++) {
+         for(int y=0; y < 3;y++) {
+            System.out.print(" " + test_board[x][y]);
+         }
+         System.out.println();
+      }
+   System.out.println();
+   }
+
 }
    /*
    public boolean Move(){
