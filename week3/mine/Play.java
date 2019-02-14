@@ -11,9 +11,8 @@
 */
 
 public class Play {
-   private Board board;
 
-   public Play() {
-      board = new Board();
+   Play() {
+      Board board = new Board();
    }
 }
