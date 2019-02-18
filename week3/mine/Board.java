@@ -6,12 +6,13 @@
 */
 public class Board {
    private int[][] board = new int[3][3];
+   private int[] board_input;
+   private Player player = new Player();
 
    public Board() {
       test_all();
       clear_board();
-      int[] board_input;
-      Player player = new Player();
+
 // i guess i will need a while loop in here at some point to make it all go - GAME WHILE LOOP
       while(true) { //don't do infinite loops
          if(check_win()>0) { // at the moment it is only checking for two in a row. and it includes 0.
