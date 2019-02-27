@@ -1,49 +1,15 @@
 
-OXO
+set it up so the tests are only run if i change a setting. using -ea i guess. does my make file use ea automatically. i do this with assertions.
 
-call board
-- if 1 exit program.
+put lots of comments in where code is confusing
 
+use my Types somehow {blank/X/0}
 
+try to have testing in a different file.
 
-Board
-
-if no board - init board
-
-
-
-
-input mechanism
-- only allow correct coordinates
-- only allow correct characters
-- check these against the baord to make sure that they are valid moves
-
-save new record in array
-- 2d array;
-
-check for three in a row
-- call display
-- if win, print win statement
-- return 1;
-
-check for full board
-- call display
-- print draw statement
-- return 1;
-
-if not yet three in a row
--  call display
-- call board again
-- - if 1, return 1.
-
-
-display
-
-this takes another class and then prints it out.
-
-
-
-Types {blank/X/0}
+maybe i could put in an ai by setting it so that the player selects themselves,
+then whether or not the other player is an ai or a person.
+if it is person a flag is set and whenever that turn goes the ai blocks a winning move or goes in an open spot.
 
 -------------------------------------------------------------------------
 
@@ -55,12 +21,18 @@ Types {blank/X/0}
 
 Assignment: Oxo
 
-This assignment counts for 20% of the assessment for the unit. The main aim in this assignment is to create a multi-class program, to practice design, classes, objects, libraries, unit testing, and style.
+This assignment counts for 20% of the assessment for the unit. The main aim in this assignment is to create a multi-class program,
+to practice design, classes, objects, libraries, unit testing, and style.
 The program
 
-The idea is to write a program called Oxo.java which allows two people to play the game Noughts and Crosses (or Tic-Tac-Toe if you are American) using just text. It would be reasonably easy to write this program in one piece, but you are asked to treat it as if it were a prototype for a bigger project (like the maze program in the design chapter of the lecture notes), to show off your object oriented design skills. Here are some suggested classes:
+The idea is to write a program called Oxo.java which allows two people to play the game Noughts and Crosses (or Tic-Tac-Toe if you are American)
+using just text. It would be reasonably easy to write this program in one piece, but you are asked to treat it as if it were a prototype
+for a bigger project (like the maze program in the design chapter of the lecture notes), to show off your object oriented design skills.
+ Here are some suggested classes:
 
-    A Board class, to represent the current state of the game, i.e. a 3x3 grid, plus which player's turn it is to move next. It should probably also be responsible for checking whether moves are valid or not, whether a player has just won or not, or whether the game is a draw. This is the main logic of the game, so this class should have unit testing, but no I/O.
+    A Board class, to represent the current state of the game, i.e. a 3x3 grid, plus which player's turn it is to move next.
+     It should probably also be responsible for checking whether moves are valid or not, whether a player has just won or not,
+     or whether the game is a draw. This is the main logic of the game, so this class should have unit testing, but no I/O.
 
     Possibly a Position class to represent a position on the 3x3 playing board, if it is needed in your design. Quite likely, it isn't needed.
 
@@ -86,20 +58,35 @@ Some things you might like to know, and which might be helpful, are:
 
     You can use System.out.print to print out text without a newline, e.g. as a prompt
 
-    You can put import java.util.*; at the top of your program to import a helpful collection of utility classes, and/or import java.io.*; for input/output classes
+    You can put import java.util.*; at the top of your program to import a helpful collection of utility classes, and/or import java.io.*;
+     for input/output classes
 
-    The Scanner class is probably the best one to use, to read lines of text from the user, or possibly something from java.nio.* (BufferedInputStram is more complex, and Console doesn't work in artificial environments such as Cygwin, MSYS2 and some IDEs)
+    The Scanner class is probably the best one to use, to read lines of text from the user, or possibly something from java.nio.*
+     (BufferedInputStram is more complex, and Console doesn't work in artificial environments such as Cygwin, MSYS2 and some IDEs)
 
 Assessment
 
-Some things which I am looking for are: good design (probably along the lines I have suggested, but in any case with "the right code in the right place"), good style (DRY, consistent, commented but not over-commented code), no statics (except for main methods), private fields (except maybe for immutable objects), defensive programming (i.e. testing for bad things even though they shouldn't happen, to improve debugging), unit testing (to convince me that your classes do what they should), lack of dependency cycles, robustness (to convince me that your classes don't do what they shouldn't).
+Some things which I am looking for are: good design (probably along the lines I have suggested, but in any case with
+"the right code in the right place"), good style (DRY, consistent, commented but not over-commented code),
+ no statics (except for main methods), private fields (except maybe for immutable objects), defensive programming
+ (i.e. testing for bad things even though they shouldn't happen, to improve debugging),
+ unit testing (to convince me that your classes do what they should), lack of dependency cycles,
+ robustness (to convince me that your classes don't do what they shouldn't).
 
-Bearing in mind that the official allowance for the assignment is only 5 hours, you have plenty to do, and doing it well will probably get you a mark in the 60-70 range. But if you are clever, or quick, or bored, or want extra marks, you could try one of these extensions: (a) implement an interesting variant of the game (b) add graphics (c) add networking to play on two different computers (d) add an AI component, so a human can play against the computer.
+Bearing in mind that the official allowance for the assignment is only 5 hours, you have plenty to do,
+and doing it well will probably get you a mark in the 60-70 range.
+But if you are clever, or quick, or bored, or want extra marks,
+you could try one of these extensions: (a) implement an interesting variant of the game (b)
+add graphics (c) add networking to play on two different computers (d) add an AI component, so a human can play against the computer.
 
 There are diminishing returns for extra work, because of the university scale: 50% = pass, 60% = merit, 70% = distinction, 80% = above and beyond the call of duty, 90% = publishable as original research, 100% = ∞.
 Submission
 
-Just submit your .java files and your Makefile if you have one. Don't submit class files - I will re-compile your classes. Add a readme.txt/readme.md/readme.pdf file if there is anything about your program which isn't immediately obvious or you have other comments to make. Don't submit proprietary formats like doc, docx, rar. Submitting a zip file is OK if you want. If you submit a Makefile, not inside a zip file, you can't view it or download it directly in SAFE (because it has no extension and looks like a subdirectory), but you can download it using "Zip Download All".
+Just submit your .java files and your Makefile if you have one. Don't submit class files - I will re-compile your classes.
+ Add a readme.txt/readme.md/readme.pdf file if there is anything about your program which isn't immediately obvious
+  or you have other comments to make. Don't submit proprietary formats like doc, docx, rar. Submitting a zip file is OK if you want.
+  If you submit a Makefile, not inside a zip file, you can't view it or download it directly in SAFE
+  (because it has no extension and looks like a subdirectory), but you can download it using "Zip Download All".
 
 ZIP ON WINDOWS: the built-in zip/unzip in Windows has at least two problems. First, it can't cope with long names. Whether this is long filenames or long overall pathnames, I am not sure. Second, on 'professional' versions of Windows which support encrypted filestores, Windows uses a bit in the zip file to indicate whether the files are encrypted or not. Unfortunately, it is a bit which means something different on all other systems, so zip files end up not being portable in either direction between systems. It is very strongly recommended that you download and install http://www.7-zip.org/ or something similar and use it for all zip/unzip operations.
 
