@@ -3,7 +3,7 @@ import java.io.IOException;
 
 public class Db {
 
-	public static void main(String [] args)
+	public static void main(String [] args) throws IOException
 	{
       Db program = new Db();
       program.run();
@@ -24,12 +24,26 @@ public class Db {
       Record testRecord = new Record();
       testRecord.allTests();
 
+//test write file
       String file_name = "./text.txt";
       try {
-         WriteFile data = new WriteFile( file_name, false );// add true here to append. false to overwrite
+         WriteFile data = new WriteFile( file_name, true );// add true here to append. false to overwrite
          data.writeToFile("This is another line of text");
          data.writeToFile(testTable.concatenateTable());
 
+      }
+      catch (IOException e) {
+         System.out.println( e.getMessage());
+      }
+
+// test readfile and print it. this is doing by string lines. so i am not importing it as records and tables here.
+      try {
+         ReadFile inputData = new ReadFile(file_name);
+         inputData.openFile();
+         for(String element: inputData.openFile()) {
+            System.out.print(element);
+         }
+         System.out.println();
       }
       catch (IOException e) {
          System.out.println( e.getMessage());
