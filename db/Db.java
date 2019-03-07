@@ -8,14 +8,7 @@ public class Db {
       Db program = new Db();
       program.run();
 
-      String file_name = "./text.txt";
-      try {
-         WriteFile data = new WriteFile( file_name, true );
-         data.writeToFile("This is another line of text");
-      }
-      catch (IOException e) {
-         System.out.println( e.getMessage());
-      }
+
 
    }
 
@@ -26,12 +19,21 @@ public class Db {
 
    void testAll()
    {
-      Table testTable = new Table(); // this is neater than the above. i should put all the testing into the right place.
+      Table testTable = new Table();
       testTable.allTests();
       Record testRecord = new Record();
       testRecord.allTests();
 
+      String file_name = "./text.txt";
+      try {
+         WriteFile data = new WriteFile( file_name, false );// add true here to append. false to overwrite
+         data.writeToFile("This is another line of text");
+         data.writeToFile(testTable.concatenateTable());
 
+      }
+      catch (IOException e) {
+         System.out.println( e.getMessage());
+      }
 
    }
 

@@ -43,10 +43,22 @@ public class Table {
 
       for (Record list : myTable) {
          for (String element : list.myArray) {
-            System.out.print(element + " ");
+            System.out.print(String.format("%-15s= %s" , element, " | " ));
          }
          System.out.println();
       }
+   }
+
+   String concatenateTable() {
+      String output = "";
+
+      for (Record list : myTable) {
+         for (String element : list.myArray) {
+            output = output + String.format("%-15s= %s" , element, " | " );
+         }
+         output = output + "\n";
+      }
+      return output;
    }
 
    void allTests()
