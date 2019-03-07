@@ -49,6 +49,26 @@ public class Db {
          System.out.println( e.getMessage());
       }
 
+// testing the Parser
+      try {
+         Table parsedTable = new Table();
+
+         ReadFile inputData = new ReadFile("testParse.txt");
+         inputData.openFile();
+         Parser parseData = new Parser();
+         parsedTable = parseData.parseText(inputData.openFile());
+
+         System.out.println();
+
+         parsedTable.printTable();
+
+         System.out.println();
+      }
+      catch (IOException e) {
+         System.out.println( e.getMessage());
+      }
+
+
    }
 
 

@@ -1,0 +1,15 @@
+I tried to make a parser but there are problems
+
+the first is the readfile only seems to import one line
+
+the second is that the splitting and the java loops seem to cause problems .
+
+they are breaking the strings up into a string for every character.  when these are printed they give every character space.
+
+i also need to go back to the explanation and see what is left to do for this.
+
+go over the whole thing and see what is expected for the input and output and format of the program.
+
+i could look into hosting it on a server  because this will be work towards my webtech stuff.
+
+ 

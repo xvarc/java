@@ -3,7 +3,7 @@ public class Table {
 
 	ArrayList<Record> myTable = new ArrayList<Record>();
 	//static int totalRows = 0;
-	static int currentRow = 1;
+	static int currentRow = 0;
 
    void run()
    {
@@ -31,9 +31,8 @@ public class Table {
    }
 
    void deleteMultiRecord(int startIndex, int endIndex) {
-      for(;startIndex<endIndex;) {
+      for(int i = startIndex;i<=endIndex;i++) {
          myTable.remove(startIndex);
-         startIndex++;
          currentRow--;
       }
       // totalRows--;
@@ -43,7 +42,7 @@ public class Table {
 
       for (Record list : myTable) {
          for (String element : list.myArray) {
-            System.out.print(String.format("%-15s= %s" , element, " | " ));
+            System.out.print(String.format("%-10s %s" , element, " | " ));
          }
          System.out.println();
       }
@@ -54,7 +53,7 @@ public class Table {
 
       for (Record list : myTable) {
          for (String element : list.myArray) {
-            output = output + String.format("%-15s= %s" , element, " | " );
+            output = output + String.format("%-10s %s" , element, " | " );
          }
          output = output + "\n";
       }
@@ -64,39 +63,43 @@ public class Table {
    void allTests()
    {
       System.out.println("start testing table");
+
       Record testRecord = new Record();
       testRecord.addField(Integer.toString(currentRow));
-      testRecord.addField(" xan lives in ");
-      testRecord.addField("a house - ");
-      testRecord.addField("07811246789");
+      testRecord.addField("  Name");
+      testRecord.addField("  Dwelling");
+      testRecord.addField("  Deets");
       insertRecord(testRecord);
       assert(getRecord(0) == testRecord);
 
       Record testRecord1 = new Record();
       testRecord1.addField(Integer.toString(currentRow));
-      testRecord1.addField(" Beau lives in ");
-      testRecord1.addField("a castle - ");
-      testRecord1.addField("07589485789");
+      testRecord1.addField("Donald");
+      testRecord1.addField("Hovel");
+      testRecord1.addField("0758945789");
       insertRecord(testRecord1);
       assert(getRecord(1) == testRecord1);
 
-      deleteRecord(1);
+      Record testRecord2 = new Record();
+      testRecord2.addField(Integer.toString(currentRow));
+      testRecord2.addField("Beau");
+      testRecord2.addField("Castle");
+      testRecord2.addField("0758948578");
 
-      insertRecord(testRecord1);
-      assert(getRecord(1) == testRecord1);
+      insertRecord(testRecord2);
+      assert(getRecord(2) == testRecord2);
 
-      setRecord(1, testRecord);
-      assert(getRecord(1) == testRecord);
-
-      insertRecord(testRecord1);
-      insertRecord(testRecord1);
-      insertRecord(testRecord1);
-      insertRecord(testRecord1);
       printTable();
       System.out.println();
 
-      deleteMultiRecord(0,3); // this doesnt work for some reason.
-      // never deletes the first record. if you go up to 4 it says that it was out of bounds
+      setRecord(0, testRecord);
+      assert(getRecord(0) == testRecord);
+
+      deleteRecord(2);
+      printTable();
+      System.out.println();
+
+      deleteMultiRecord(0,1); // all records deleted
       printTable();
       System.out.println();
 

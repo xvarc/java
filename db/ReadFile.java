@@ -27,4 +27,7 @@ public class ReadFile {
       textReader.close();
       return textData;
    }
+
+   // i need a function that takes the array list of strings and turns it into records.
+
 }

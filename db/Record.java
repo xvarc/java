@@ -1,7 +1,17 @@
 import java.util.ArrayList;
 public class Record {
-  // should this be in a constructor?
+   // should this be in a constructor?
    ArrayList<String> myArray = new ArrayList<String>();
+   static int key;
+
+
+   public Record() {
+      addField(Integer.toString(key));
+      if(key == 0) {
+         setField(0,"Key");
+      }
+      key++;
+      }
 
 
    void run()
@@ -42,9 +52,9 @@ public class Record {
 
       addField("one");
       addField("what?");
-      setField(1, "two");
-      assert(getField(0)=="one");
-      assert(getField(1)=="two");
+      setField(2, "two");
+      assert(getField(1)=="one");
+      assert(getField(2)=="two");
 
       System.out.println("record testing complete");
    }
