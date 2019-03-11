@@ -31,6 +31,12 @@ public class Record {
       return myArray.get(arrayField);
    }
 
+   void deleteFields() {
+      for (int i = 0;i<myArray.size();) {
+         myArray.remove(i);
+      }
+   }
+
 
 
 //Helper Functions
@@ -55,6 +61,11 @@ public class Record {
       setField(2, "two");
       assert(getField(1)=="one");
       assert(getField(2)=="two");
+      printRecord();
+      deleteFields();
+      printRecord();
+
+
 
       System.out.println("record testing complete");
    }

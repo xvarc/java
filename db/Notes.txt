@@ -1,10 +1,16 @@
-I tried to make a parser but there are problems
+i need robust testing using asserts. i don't want any print statements coming out.
+work one by one and look at each function and work out how to assert and check it
 
-the first is the readfile only seems to import one line
+check his checklist in the marking to see what he values.
 
-the second is that the splitting and the java loops seem to cause problems .
+Do something to check for bad inputs.
 
-they are breaking the strings up into a string for every character.  when these are printed they give every character space.
+
+
+
+I need to make myself an extension. what about using an API to get info and input it into a database.
+
+create a user interface .
 
 i also need to go back to the explanation and see what is left to do for this.
 
@@ -12,4 +18,9 @@ go over the whole thing and see what is expected for the input and output and fo
 
 i could look into hosting it on a server  because this will be work towards my webtech stuff.
 
- 
+
+ As well as your program, you should submit a report which describes the stages of development,
+  the design decisions you made, any refactoring you had to do,
+   and any particularly interesting issues that arose during implementation.
+
+   i can do this by just going through the whole thing and describing each little piece and complication. 

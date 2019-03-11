@@ -30,6 +30,10 @@ public class Table {
       currentRow--;
    }
 
+   void emptyRecord(Record targetRecord) {
+      targetRecord.deleteFields();
+   }
+
    void deleteMultiRecord(int startIndex, int endIndex) {
       for(int i = startIndex;i<=endIndex;i++) {
          myTable.remove(startIndex);
@@ -65,7 +69,6 @@ public class Table {
       System.out.println("start testing table");
 
       Record testRecord = new Record();
-      testRecord.addField(Integer.toString(currentRow));
       testRecord.addField("  Name");
       testRecord.addField("  Dwelling");
       testRecord.addField("  Deets");
@@ -73,7 +76,6 @@ public class Table {
       assert(getRecord(0) == testRecord);
 
       Record testRecord1 = new Record();
-      testRecord1.addField(Integer.toString(currentRow));
       testRecord1.addField("Donald");
       testRecord1.addField("Hovel");
       testRecord1.addField("0758945789");
@@ -81,7 +83,6 @@ public class Table {
       assert(getRecord(1) == testRecord1);
 
       Record testRecord2 = new Record();
-      testRecord2.addField(Integer.toString(currentRow));
       testRecord2.addField("Beau");
       testRecord2.addField("Castle");
       testRecord2.addField("0758948578");
@@ -102,6 +103,12 @@ public class Table {
       deleteMultiRecord(0,1); // all records deleted
       printTable();
       System.out.println();
+
+      insertRecord(testRecord);
+      insertRecord(testRecord1);
+      insertRecord(testRecord2);
+
+      // i haven't tested the empty record
 
       System.out.println("table testing complete");
       System.out.println();
