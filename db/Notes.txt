@@ -5,22 +5,12 @@ check his checklist in the marking to see what he values.
 
 Do something to check for bad inputs.
 
-
-
-
-I need to make myself an extension. what about using an API to get info and input it into a database.
-
 create a user interface .
 
-i also need to go back to the explanation and see what is left to do for this.
-
 go over the whole thing and see what is expected for the input and output and format of the program.
-
-i could look into hosting it on a server  because this will be work towards my webtech stuff.
-
 
  As well as your program, you should submit a report which describes the stages of development,
   the design decisions you made, any refactoring you had to do,
    and any particularly interesting issues that arose during implementation.
 
-   i can do this by just going through the whole thing and describing each little piece and complication. 
+   i can do this by just going through the whole thing and describing each little piece and complication.

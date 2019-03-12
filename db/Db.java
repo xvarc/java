@@ -6,9 +6,10 @@ public class Db {
 	public static void main(String [] args) throws IOException
 	{
       Db program = new Db();
-      program.run();
 
-
+      if(args[0].equals("Y")) {
+         program.run();
+      }
 
    }
 
