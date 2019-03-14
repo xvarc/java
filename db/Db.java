@@ -6,16 +6,7 @@ public class Db {
 	public static void main(String [] args) throws IOException
 	{
       Db program = new Db();
-
-      if(args[0].equals("Y")) {
-         program.run();
-      }
-
-   }
-
-   void run()
-   {
-      testAll();
+      ArgInterpreter interp = new ArgInterpreter(args);
    }
 
    void testAll()
@@ -27,7 +18,7 @@ public class Db {
 
 //test write file
 
-System.out.println("start testing write file");
+      System.out.println("start testing write file");
 
       String file_name = "./text.txt";
       String file_name1 = "./text1.txt";
@@ -43,10 +34,10 @@ System.out.println("start testing write file");
          System.out.println( e.getMessage());
       }
 
-System.out.println("testing write file complete");
+      System.out.println("testing write file complete");
 
 
-System.out.println("start testing read file");
+      System.out.println("start testing read file");
 
 // test readfile and print it. this is doing by string lines. so i am not importing it as records and tables here.
       try {
@@ -66,7 +57,7 @@ System.out.println("start testing read file");
 
 
 // testing the Parser
-System.out.println("start testing parser");
+      System.out.println("start testing parser");
 
       try {
          Table parsedTable = new Table();

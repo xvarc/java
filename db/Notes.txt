@@ -1,3 +1,13 @@
+print - table, db, record
+
+clear table, db, current record
+
+read file
+
+write file
+
+i can do asserts on a read by just getting the record and checking it against a string i write in 
+
 i need robust testing using asserts. i don't want any print statements coming out.
 work one by one and look at each function and work out how to assert and check it
 
