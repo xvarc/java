@@ -30,6 +30,13 @@ public class Table {
       currentRow--;
    }
 
+   void clearTable()
+   {
+      for (int i = 0;i<myTable.size();) {
+         myTable.remove(i);
+        }
+   }
+
    void emptyRecord(Record targetRecord) {
       targetRecord.deleteFields();
    }

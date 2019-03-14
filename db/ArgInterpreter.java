@@ -1,23 +1,53 @@
 public class ArgInterpreter {
+   Db uiDb = new Db();
+   Table uiTable = new Table();
+   Record uiRecord = new Record();
+   //MyTesting myTests = new MyTesting();
 
    public ArgInterpreter (String[] args) {
-      Db program = new Db();
-      if(args[0].equals("test")) {
-         System.out.println("Now testing...");
-         program.testAll();
+      for(int i=0; i<args.length;i++) {
+         argHandler(args, i);
+      }
+   }
+
+   void argHandler(String[] arg, int i)
+   {
+      if(arg[i].equals("test")) {
+         System.out.println("Now testing....");
+         //myTests.testAll();
+         uiDb.testAll();
          System.out.println("Testing complete.");
       }
-
-      if(args[0].equals("print")) {
-         if(args[1].equals("db")) {
-            
-         }
-         if(args[1].equals("table")) {
-
-         }
-         if(args[1].equals("record")) {
-
-         }
+      if(arg[i].equals("insertfield")) {
+         uiRecord.addField(arg[i+1]);
+      }
+      if(arg[i].equals("insertrecord")) {
+         uiTable.insertRecord(uiRecord);
+      }
+      if(arg[i].equals("inserttable")) {
+         uiDb.insertTable(uiTable);
+      }
+      if(arg[i].equals("clearrecord")) {
+         uiRecord.deleteFields();
+      }
+      if(arg[i].equals("cleartable")) {
+         uiTable.clearTable();
+      }
+      if(arg[i].equals("cleardb")) {
+         uiDb.clearDb();
+      }
+      if(arg[i].equals("printrecord")) {
+         uiRecord.printRecord();
+      }
+      if(arg[i].equals("printtable")) {
+         uiTable.printTable();
+      }
+      if(arg[i].equals("printdb")) {
+         uiDb.printDb();
       }
    }
 }
+
+// need function to take the length of arguments. do not check more than that
+
+// notes - check all against possible.

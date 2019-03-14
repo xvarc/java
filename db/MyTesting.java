@@ -1,34 +1,8 @@
 import java.util.ArrayList;
 import java.io.IOException;
 
-public class Db {
-   ArrayList<Table> myDb = new ArrayList<Table>();
-
-	public static void main(String [] args) throws IOException
-	{
-      Db program = new Db();
-      ArgInterpreter interp = new ArgInterpreter(args);
-   }
-
-   void insertTable(Table input)
-   {
-      myDb.add(input);
-   }
-
-   void printDb()
-   {
-      for(Table element: myDb) {
-         element.printTable();
-         System.out.println();
-      }
-   }
-
-   void clearDb()
-   {
-      for (int i = 0;i<myDb.size();) {
-         myDb.remove(i);
-        }
-   }
+public class MyTesting {
+   Db testDb = new Db();
 
    void testAll()
    {
@@ -38,8 +12,9 @@ public class Db {
       testRecord.allTests();
 
 
+
 //test write file
-      System.out.println("start testing write file.");
+      System.out.println("start testing write file...");
       String file_name = "./text.txt";
       String file_name1 = "./text1.txt";
       try {
@@ -89,30 +64,18 @@ public class Db {
 
       // test DB Functions
 		System.out.println("start testing DB functions");
-		insertTable(testTable);
-		insertTable(testTable);
-		printDb();
-		clearDb();
-		printDb();
-      insertTable(testTable);
-      insertTable(testTable);
-      insertTable(testTable);
-      insertTable(testTable);
-      insertTable(testTable);
-      insertTable(testTable);
-      printDb();
-		System.out.println("testing DB functions complete");
+		testDb.insertTable(testTable);
+		testDb.insertTable(testTable);
+		testDb.printDb();
+		testDb.clearDb();
+		testDb.printDb();
+      testDb.insertTable(testTable);
+      testDb.insertTable(testTable);
+      testDb.insertTable(testTable);
+      testDb.insertTable(testTable);
+      testDb.insertTable(testTable);
+      testDb.insertTable(testTable);
+      testDb.printDb();
+		System.out.println("testing DBs functions complete");
    }
-
-   //   record1.setField(0, "hello");
-   //   record1.printRecord();
-
-      /*
-      ArrayList<Record> myTable = new ArrayList<Record>();
-      Record hello1 = new Record();
-      Record hello2 = new Record();
-      System.out.println("Running Main");
-      myTable.add(hello1);
-      myTable.add(hello2);
-      */
 }

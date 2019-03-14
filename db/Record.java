@@ -11,7 +11,7 @@ public class Record {
          setField(0,"Key");
       }
       key++;
-      }
+   }
 
 
    void run()
@@ -48,7 +48,7 @@ public class Record {
 
    void printRecord() {
       for(String element: myArray) {
-         System.out.print(element);
+         System.out.print(" " + element);
       }
        System.out.println();
    }
