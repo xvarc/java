@@ -1,0 +1,3 @@
+Key         | 0           |   Name      |   Dwelling  |   Deets     | 
+1           | 1           | Donald      | Hovel       | 0758945789  | 
+2           | 2           | Beau        | Castle      | 0758948578  | 

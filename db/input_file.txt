@@ -1,0 +1,4 @@
+1           |   Name      |   Dwelling  |   Deets     | 
+2           | Donald      | Hovel       | 0758945789  | 
+3           | Beau        | Castle      | 0758948578  | 
+

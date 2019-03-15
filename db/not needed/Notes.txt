@@ -1,0 +1,19 @@
+do the write up. find out how to submit properly.
+
+As well as your program, you should submit a report which describes the stages of development,
+ the design decisions you made, any refactoring you had to do,
+  and any particularly interesting issues that arose during implementation.
+
+  i can do this by just going through the whole thing and describing each little piece and complication.
+
+check the feedback he gave me for my last one. 
+
+mention that i use asserts
+
+explain how to use my Programming
+
+explain any design desicions i made
+
+explain how to use my extension .
+
+check his checklist in the marking to see what he values.
