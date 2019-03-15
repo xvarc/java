@@ -80,6 +80,7 @@ public class Db {
          inputData.openFile();
          Parser parseData = new Parser();
          parsedTable = parseData.parseText(inputData.openFile());
+         parsedTable.printTable();
       }
       catch (IOException e) {
          System.out.println( e.getMessage());
@@ -90,8 +91,16 @@ public class Db {
 		System.out.println("start testing DB functions");
 		insertTable(testTable);
 		insertTable(testTable);
+		printDb();
 		clearDb();
 		printDb();
+      insertTable(testTable);
+      insertTable(testTable);
+      insertTable(testTable);
+      insertTable(testTable);
+      insertTable(testTable);
+      insertTable(testTable);
+      printDb();
 		System.out.println("testing DB functions complete");
    }
 

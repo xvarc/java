@@ -1,0 +1,18 @@
+
+
+
+headings
+insertfield name insertfield breed insertfield owner insertrecord clearrecord insertfield piggle insertfield smallishbrown insertfield dad insertrecord
+
+insertTable
+
+printdb
+
+
+java -ea Db insertfield name insertfield breed insertfield owner insertrecord inserttable printdb clearrecord cleartable insertfield 1 insertfield waggy insertfield fatkind insertfield me insertrecord inserttable printtable
+
+
+java -ea Db insertfield name insertfield breed insertfield owner insertrecord inserttable insertfield waggy insertfield fatkind insertfield me insertrecord inserttable printdb
+
+
+java -ea Db insertfield name insertfield breed insertfield owner insertrecord inserttable printdb clearrecord cleartable insertfield 1 insertfield waggy insertfield fatkind insertfield me insertrecord inserttable printtable clearrecord cleartable insertfield 2 insertfield fido insertfield thinkind insertfield you insertrecord printtable

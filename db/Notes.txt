@@ -1,3 +1,8 @@
+get rid of print statements in tests. 
+
+do the write up. find out how to submit properly. 
+
+
 print - table, db, record
 
 clear table, db, current record
