@@ -2,20 +2,39 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 public class Db {
+	ArrayList<Table> myDb = new ArrayList<Table>();
 
 	public static void main(String [] args) throws IOException
 	{
       Db program = new Db();
       program.run();
-
-
-
    }
 
    void run()
    {
       testAll();
    }
+
+	 void insertTable(Table input)
+	 {
+		 myDb.add(input);
+	 }
+
+	 void printDb()
+	 {
+		 for(Table element: myDb) {
+			 element.printTable();
+	 		 System.out.println();
+		 }
+	 }
+
+	 void clearDb()
+	 {
+	    for (int i = 0;i<myDb.size();) {
+	       myDb.remove(i);
+			}
+	 }
+
 
    void testAll()
    {
@@ -24,34 +43,30 @@ public class Db {
       Record testRecord = new Record();
       testRecord.allTests();
 
+			String output_file = "./output_file.txt";
+			String output_file1 = "./output_file1.txt";
+			String input_file = "./input_file.txt";
+			String input_file1 = "./input_file1.txt";
+
 //test write file
-
-System.out.println("start testing write file");
-
-      String file_name = "./text.txt";
-      String file_name1 = "./text1.txt";
+		System.out.println("start testing write file");
       try {
-         WriteFile data = new WriteFile( file_name, false );// add true here to append. false to overwrite
+         WriteFile data = new WriteFile( output_file, false );// add true here to append. false to overwrite
          data.writeToFile("This is another line of text");
-
-         WriteFile data1 = new WriteFile( file_name1, false );
+         WriteFile data1 = new WriteFile( output_file1, false );
          data1.writeToFile(testTable.concatenateTable());
-
       }
       catch (IOException e) {
          System.out.println( e.getMessage());
       }
+		System.out.println("testing write file complete");
 
-System.out.println("testing write file complete");
 
-
-System.out.println("start testing read file");
-
-// test readfile and print it. this is doing by string lines. so i am not importing it as records and tables here.
+// test readfile and print it. the file is imported as one string per line.
+		System.out.println("start testing read file");
       try {
-         ReadFile inputData = new ReadFile(file_name1);
+         ReadFile inputData = new ReadFile(input_file1);
          ArrayList<String> textData = new ArrayList<String>();
-
          textData = inputData.openFile();
          for(int i=0;i<textData.size();i++){
              System.out.println(textData.get(i));
@@ -63,44 +78,29 @@ System.out.println("start testing read file");
       System.out.println("testing read file complete");
 
 
-
-// testing the Parser
-System.out.println("start testing parser");
-
+// testing the Parser. the takes the strings imported from the file and breaks them up into records
+		System.out.println("start testing parser");
       try {
          Table parsedTable = new Table();
-
-         ReadFile inputData = new ReadFile(file_name1);
+         ReadFile inputData = new ReadFile(output_file1);
          inputData.openFile();
-
          Parser parseData = new Parser();
          parsedTable = parseData.parseText(inputData.openFile());
-
          parsedTable.printTable();
-
       }
       catch (IOException e) {
          System.out.println( e.getMessage());
       }
+    System.out.println("testing parser complete");
 
 
+// test DB Functions
+			System.out.println("start testing DB functions");
+			insertTable(testTable);
+			insertTable(testTable);
+			printDb();
+			clearDb();
+			printDb();
+			System.out.println("testing DB functions complete");
    }
-//remove the repeat keys thing.
-
-// this should be so small it only deals with command line args.
-
-// use add() method to add values in the list
-
-
-   //   record1.setField(0, "hello");
-   //   record1.printRecord();
-
-      /*
-      ArrayList<Record> myTable = new ArrayList<Record>();
-      Record hello1 = new Record();
-      Record hello2 = new Record();
-      System.out.println("Running Main");
-      myTable.add(hello1);
-      myTable.add(hello2);
-      */
 }
