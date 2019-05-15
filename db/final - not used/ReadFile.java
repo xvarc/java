@@ -1,9 +1,3 @@
-/*
-COMSM0103 - Object Oriented Programming with Java
-Databases Coursework
-Xan Varcoe
-*/
-
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;

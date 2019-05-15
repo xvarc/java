@@ -1,26 +1,44 @@
-i need robust testing using asserts. i don't want any print statements coming out.
-work one by one and look at each function and work out how to assert and check it
+The main aim of the assignment is to gain experience of incremental development, including refactoring as well as unit testing.
+
+do the write up. find out how to submit properly.
+
+As well as your program, you should submit a report which describes the stages of development,
+ the design decisions you made, any refactoring you had to do,
+  and any particularly interesting issues that arose during implementation.
+
+  i can do this by just going through the whole thing and describing each little piece and complication.
+
+check the feedback he gave me for my last one.
+
+mention that i use asserts
+
+explain how to use my Programming
+
+explain any design desicions i made
+
+explain how to use my extension .
 
 check his checklist in the marking to see what he values.
 
-Do something to check for bad inputs.
+mention my cyclical dependencies. how i could have overcome it. 
 
-
-
-
-I need to make myself an extension. what about using an API to get info and input it into a database.
-
-create a user interface .
-
-i also need to go back to the explanation and see what is left to do for this.
-
-go over the whole thing and see what is expected for the input and output and format of the program.
-
-i could look into hosting it on a server  because this will be work towards my webtech stuff.
-
-
- As well as your program, you should submit a report which describes the stages of development,
-  the design decisions you made, any refactoring you had to do,
-   and any particularly interesting issues that arose during implementation.
-
-   i can do this by just going through the whole thing and describing each little piece and complication. 
+CMD CoMment Density - Ratio of comments to other lines of code
+CPR Copy and Paste Replication - Incidences of duplicated, un-DRY similar lines of code in project
+CUP Coupling - Tightness of method call coupling between classes
+CYD CYclic Dependencies - Classes with co-dependencies (A relies upon B and B relies upon A)
+CCX Cyclomatic Complexity - An industry standard measure of code complexity (using PMD)
+DON Depth Of Nesting - Depth of loop and conditional structures within methods
+DBL Double Blank Lines - Wasting space by using two blanks lines in a row !
+GVR Global Variable Reference - Accessing a variable from outside of its class
+ISD If Statement Density - Ratio of IF statements to other lines of code (big blocks of Ifs)
+IND INDent mismatch - Problem with tab / space indentation
+ALL Average Line Length - Average of the longest 5 lines of code in the project
+MBL missing Method Blank Lines - Omitting a single blank line after a method
+AML Average Method Length - Average of the longest 5 method lengths (LoC) in the project
+MNL average Method Name Length - Simple average of all method names
+MNR Method Name Rating - Verb/Query analysis to assess 'goodness' of method names
+MSI Method Similarities - Plag checker used to identify un-DRY copy & paste duplicate methods
+PRC PaRameter Count - The number of parameters passed to methods (not too many !)
+TMV* Too Many Variables - Many single variables in object (not grouped into Arrays or data types)
+UNC Unused variables, parameters and methods
+VNL average Variable Name Length - Simple average of the length of all variable names

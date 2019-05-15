@@ -1,9 +1,3 @@
-/*
-COMSM0103 - Object Oriented Programming with Java
-Databases Coursework
-Xan Varcoe
-*/
-
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;

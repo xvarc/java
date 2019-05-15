@@ -1,9 +1,3 @@
-/*
-COMSM0103 - Object Oriented Programming with Java
-Databases Coursework
-Xan Varcoe
-*/
-
 import java.util.ArrayList;
 public class Record {
    // should this be in a constructor?
@@ -60,9 +54,6 @@ public class Record {
    }
 
    void allTests() {
-      //commented print statments can be used to test outputs in terminal
-
-
       System.out.println("start testing record");
 
       addField("one");
@@ -70,9 +61,9 @@ public class Record {
       setField(2, "two");
       assert(getField(1)=="one");
       assert(getField(2)=="two");
-      //printRecord();
+      printRecord();
       deleteFields();
-      //printRecord();
+      printRecord();
 
 
 

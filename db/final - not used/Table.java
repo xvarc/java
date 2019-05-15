@@ -1,9 +1,3 @@
-/*
-COMSM0103 - Object Oriented Programming with Java
-Databases Coursework
-Xan Varcoe
-*/
-
 import java.util.ArrayList;
 public class Table {
 
@@ -77,7 +71,6 @@ public class Table {
       return output;
    }
 
-//Print statements below can be used to test outputs in the terminal
    void allTests()
    {
       System.out.println("start testing table");
@@ -104,19 +97,19 @@ public class Table {
       insertRecord(testRecord2);
       assert(getRecord(2) == testRecord2);
 
-      //printTable();
-      //System.out.println();
+      printTable();
+      System.out.println();
 
       setRecord(0, testRecord);
       assert(getRecord(0) == testRecord);
 
       deleteRecord(2);
-      //printTable();
-      //System.out.println();
+      printTable();
+      System.out.println();
 
       deleteMultiRecord(0,1); // all records deleted
       printTable();
-      //System.out.println();
+      System.out.println();
 
       insertRecord(testRecord);
       insertRecord(testRecord1);
@@ -125,7 +118,7 @@ public class Table {
       // i haven't tested the empty record
 
       System.out.println("table testing complete");
-      //System.out.println();
+      System.out.println();
    }
 
 
